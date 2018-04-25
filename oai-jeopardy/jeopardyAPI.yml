@@ -1,0 +1,470 @@
+swagger: '2.0'
+host: jma.mybluemix.net
+info:
+  version: 1.0.0
+  title: oai-jeopardy
+basePath: /api
+paths:
+  /jeopardyQuestions:
+    post:
+      tags:
+        - jeopardyQuestion
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: jeopardyQuestion.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/jeopardyQuestion'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/jeopardyQuestion'
+      deprecated: false
+    patch:
+      tags:
+        - jeopardyQuestion
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: jeopardyQuestion.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/jeopardyQuestion'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/jeopardyQuestion'
+      deprecated: false
+    put:
+      tags:
+        - jeopardyQuestion
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: jeopardyQuestion.replaceOrCreate__put_jeopardyQuestions
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/jeopardyQuestion'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/jeopardyQuestion'
+      deprecated: false
+    get:
+      tags:
+        - jeopardyQuestion
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: jeopardyQuestion.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/jeopardyQuestion'
+      deprecated: false
+  /jeopardyQuestions/replaceOrCreate:
+    post:
+      tags:
+        - jeopardyQuestion
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: jeopardyQuestion.replaceOrCreate__post_jeopardyQuestions_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/jeopardyQuestion'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/jeopardyQuestion'
+      deprecated: false
+  /jeopardyQuestions/upsertWithWhere:
+    post:
+      tags:
+        - jeopardyQuestion
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: jeopardyQuestion.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/jeopardyQuestion'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/jeopardyQuestion'
+      deprecated: false
+  '/jeopardyQuestions/{id}/exists':
+    get:
+      tags:
+        - jeopardyQuestion
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'jeopardyQuestion.exists__get_jeopardyQuestions_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/jeopardyQuestions/{id}':
+    head:
+      tags:
+        - jeopardyQuestion
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'jeopardyQuestion.exists__head_jeopardyQuestions_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - jeopardyQuestion
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: jeopardyQuestion.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/jeopardyQuestion'
+      deprecated: false
+    put:
+      tags:
+        - jeopardyQuestion
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'jeopardyQuestion.replaceById__put_jeopardyQuestions_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/jeopardyQuestion'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/jeopardyQuestion'
+      deprecated: false
+    patch:
+      tags:
+        - jeopardyQuestion
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: jeopardyQuestion.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: jeopardyQuestion id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/jeopardyQuestion'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/jeopardyQuestion'
+      deprecated: false
+  '/jeopardyQuestions/{id}/replace':
+    post:
+      tags:
+        - jeopardyQuestion
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'jeopardyQuestion.replaceById__post_jeopardyQuestions_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/jeopardyQuestion'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/jeopardyQuestion'
+      deprecated: false
+  /jeopardyQuestions/findOne:
+    get:
+      tags:
+        - jeopardyQuestion
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: jeopardyQuestion.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/jeopardyQuestion'
+      deprecated: false
+  /jeopardyQuestions/update:
+    post:
+      tags:
+        - jeopardyQuestion
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: jeopardyQuestion.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/jeopardyQuestion'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /jeopardyQuestions/count:
+    get:
+      tags:
+        - jeopardyQuestion
+      summary: Count instances of the model matched by where from the data source.
+      operationId: jeopardyQuestion.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /jeopardyQuestions/change-stream:
+    post:
+      tags:
+        - jeopardyQuestion
+      summary: Create a change stream.
+      operationId: >-
+        jeopardyQuestion.createChangeStream__post_jeopardyQuestions_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - jeopardyQuestion
+      summary: Create a change stream.
+      operationId: jeopardyQuestion.createChangeStream__get_jeopardyQuestions_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  /jeopardyQuestions/random:
+    get:
+      tags:
+        - jeopardyQuestion
+      summary: Gets one random question
+      operationId: jeopardyQuestion.random
+      parameters: []
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              questions:
+                type: object
+      deprecated: false
+  /jeopardyQuestions/categories:
+    get:
+      tags:
+        - jeopardyQuestion
+      summary: Gets list of categories
+      operationId: jeopardyQuestion.categories
+      parameters: []
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              categories:
+                type: object
+      deprecated: false
+tags:
+  - name: jeopardyQuestion
+consumes:
+  - application/json
+  - application/x-www-form-urlencoded
+  - application/xml
+  - text/xml
+produces:
+  - application/json
+  - application/xml
+  - text/xml
+  - application/javascript
+  - text/javascript
+definitions:
+  jeopardyQuestion:
+    properties:
+      question:
+        type: string
+      answer:
+        type: string
+      category:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - question
+      - answer
+    additionalProperties: false
+  x-any:
+    properties: {}
+  ObjectID:
+    type: string
+    pattern: '^[a-fA-F\d]{24}$'
